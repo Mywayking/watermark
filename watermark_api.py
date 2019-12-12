@@ -19,6 +19,8 @@ app = flask.Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 2MB
 # 设置允许的文件格式
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'PNG', 'bmp'}
+
+
 # 设置静态文件缓存过期时间
 # app.send_file_max_age_default = timedelta(seconds=10)
 
@@ -41,8 +43,7 @@ def upload():
     """
     :return:
     """
-    import time
-    print(time.time())
+    print(datetime.datetime.now())
     if request.method == 'POST':
         f = request.files['file']
 
@@ -62,14 +63,13 @@ def upload():
         upload_path = os.path.join(basepath, 'static/images', secure_filename(new_name))
         water_path = os.path.join(basepath, 'static/water', secure_filename(new_name))
         f.save(upload_path)
-        print('save', time.time())
         mark_photo(upload_path, water_path, mark_text=mark_text, size=int(size), color=color, opacity=float(opacity),
                    space=int(space), angle=int(angle))
         image_data = open(water_path, "rb").read()
-        print('read', time.time())
+        print('read', datetime.datetime.now())
         os.remove(upload_path)
         os.remove(water_path)
-        print('delete', time.time())
+        print('delete', datetime.datetime.now())
         response = make_response(image_data)
         response.headers['Content-Type'] = 'image/png'
         return response
