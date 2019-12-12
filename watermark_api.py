@@ -43,7 +43,7 @@ def upload():
     """
     :return:
     """
-    print(datetime.datetime.now())
+    # print(datetime.datetime.now())
     if request.method == 'POST':
         f = request.files['file']
 
@@ -66,10 +66,10 @@ def upload():
         mark_photo(upload_path, water_path, mark_text=mark_text, size=int(size), color=color, opacity=float(opacity),
                    space=int(space), angle=int(angle))
         image_data = open(water_path, "rb").read()
-        print('read', datetime.datetime.now())
+        # print('read', datetime.datetime.now())
         os.remove(upload_path)
         os.remove(water_path)
-        print('delete', datetime.datetime.now())
+        # print('delete', datetime.datetime.now())
         response = make_response(image_data)
         response.headers['Content-Type'] = 'image/png'
         return response
