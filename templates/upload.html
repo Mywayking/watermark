@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RTBAsia图片加水印</title>
+</head>
+<body>
+
+<style>
+    .divcss5-cent {
+        margin: 0 auto;
+        width: 250px;
+        height: 50px;
+    }
+</style>
+<div class="divcss5-cent">
+    　<h2>图片添加水印</h2>
+    <form action="" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file"/><br/> <span id="spanFile"></span><br/>
+        <input id="text" type="text" class="txt_input" name="mark_text" value="RTBAsia"/> 水印内容<br/> <span
+            id="spanText"></span><br/>
+        <input id="text" type="text" class="txt_input" name="size" value="25"/> 水印字号<br/> <span
+            id="spanText"></span><br/>
+        <input id="color" type="color" name="color" value='#F4EEF1'/> 水印颜色<br/> <span id="spanText"></span><br/>
+        <input id="text" type="text" class="txt_input" name="space" value="60"/> 水印间距<br/> <span
+            id="spanText"></span><br/>
+        <input id="text" type="text" class="txt_input" name="angle" value="30"/> 倾斜角度<br/> <span
+            id="spanText"></span><br/>
+        <input id="range1" type="range" name="opacity" max="1" min="0" step="0.1" value="0.4"/> 水印透明度<br/> <span
+            id="spanText"></span><br/>
+        <input type="submit" value="上传" class="button-new"/>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form >
+        <input type="checkbox" name="c1" value="11"/> <input type="checkbox" name="c1" value="12"/>多选 <br/><br/>
+        <input type="radio" name="r1"  value="21"/> <input type="radio" name="r1"  value="22"/> 单选<br/><br/>
+        <input id="color" type="color"/> 颜色：<span id="spanColor"></span><br/><br/>
+        <input id="month" type="month"/> 月份：<span id="spanMonth"></span><br/><br/>
+        <input id="week" type="week"/> 周：<span id="spanWeek"></span><br/><br/>
+        <input id="date" type="date"/> 日期：<span id="spanDate"></span><br/><br/>
+        <input id="" type="datetime"/> 日期和时间 （UTC 时间）（这个没有效果）<br/><br/>
+        <input id="datetime" type="datetime-local"/> 日期和时间 （本地时间）：<span id="spanDatetime"></span><br/><br/>
+        <input id="time" type="time"/> 时间：<span id="spanTime"></span><br/><br/>
+
+        <input id="email" type="email"/> email （提交表单的时候会自动进行简单的验证）<br/> <span id="spanEmail"></span><br/>
+        <input id="file" type="file"/> 文件 （应该可以上传手机里的图片，没测试）<br/> <span id="spanFile"></span><br/>
+        <input id="number" type="number" max="100" min="10" step="2" value="4"/> 数字 （输入法会变成数字形式）<br/> <span id="spanNumber"></span><br/>
+        <input id="range1" type="range" max="100" min="10" step="10" value="1" /> 滑动块 <br/> <span id="spanRange"></span><br/>
+        <input id="range2" type="range" max="100" min="10" step="1" value="1" /> 滑动块 <br/> <span id="span1"></span><br/>
+        <input id="password" type="password"/> 密码（输入法会变成英文和数字形式）<br/> <span id="spanPassword"></span><br/>
+        <input id="tel" type="tel"/> 电话 （数字键盘和#号）<br/> <span id="spanTel"></span><br/>
+        <input id="text" type="text" placeholder="请输入。。。"/> 文本 （输入法会变成中文形式）<br/> <span id="spanText"></span><br/>
+        <input id="url" type="url"/> url（输入法会变成英文形式）<br/> <span id="spanUrl"></span><br/>
+
+
+        <input id="search" type="search"/> 查询 (输入法里面增加“放大镜”，点击放大镜后会提交表单)<br/> <span id="spanSearch"></span><br/>
+
+        <input id="reset" type="reset" value=" 清 空 "/> <br/>
+        <input id="submit" type="submit" value=" 提 交 "/> <br/>
+        <input id="button" type="button" value=" 取 值 "/><br/>
+
+
+
+    </form>
+</body>
+</html>
