@@ -54,6 +54,7 @@ def upload():
         angle = request.form.get("angle")
         opacity = request.form.get("opacity")
         # print(mark_text, space)
+        print('get form')
         basepath = os.path.dirname(__file__)  # 当前文件所在路径
         new_name = "{0}.{1}".format(create_uuid(), f.filename)
         upload_path = os.path.join(basepath, 'static/images', secure_filename(new_name))
