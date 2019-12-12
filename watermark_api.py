@@ -75,4 +75,5 @@ def upload():
 
 if __name__ == '__main__':
     # app.debug = True
+    # nohup python -u watermark_api.py >nohup_watermark_api.log
     app.run(host='0.0.0.0', port=8987, debug=False)
