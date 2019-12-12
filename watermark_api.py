@@ -41,6 +41,8 @@ def upload():
     """
     :return:
     """
+    import time
+    print(time.time())
     if request.method == 'POST':
         f = request.files['file']
 
@@ -54,20 +56,20 @@ def upload():
         angle = request.form.get("angle")
         opacity = request.form.get("opacity")
         # print(mark_text, space)
-        print('get form')
+
         basepath = os.path.dirname(__file__)  # 当前文件所在路径
         new_name = "{0}.{1}".format(create_uuid(), f.filename)
         upload_path = os.path.join(basepath, 'static/images', secure_filename(new_name))
         water_path = os.path.join(basepath, 'static/water', secure_filename(new_name))
         f.save(upload_path)
-        print('save')
+        print('save', time.time())
         mark_photo(upload_path, water_path, mark_text=mark_text, size=int(size), color=color, opacity=float(opacity),
                    space=int(space), angle=int(angle))
         image_data = open(water_path, "rb").read()
-        print('read')
+        print('read', time.time())
         os.remove(upload_path)
         os.remove(water_path)
-        print('delete')
+        print('delete', time.time())
         response = make_response(image_data)
         response.headers['Content-Type'] = 'image/png'
         return response
