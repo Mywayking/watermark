@@ -1,6 +1,10 @@
 #图片加水印服务
 给图片添加文字水印，支持设置文字内容、大小、透明度、颜色、旋转等
 
+http://192.168.1.149:8987/watermark/query
+
+http://0.0.0.0:8987/watermark/query
+
 # 图片
 - https://www.onlineocr.net/zh_hans/
 
