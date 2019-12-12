@@ -20,7 +20,7 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 2MB
 # 设置允许的文件格式
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'PNG', 'bmp'}
 # 设置静态文件缓存过期时间
-app.send_file_max_age_default = timedelta(seconds=10)
+# app.send_file_max_age_default = timedelta(seconds=10)
 
 
 def allowed_file(filename):
@@ -85,4 +85,4 @@ if __name__ == '__main__':
     # app.debug = True
 
     # nohup python -u watermark_api.py >nohup_watermark_api.log 2>&1 &
-    app.run(host='0.0.0.0', port=8987, debug=False)
+    app.run(host='0.0.0.0', port=8987, debug=False, threaded=True)
