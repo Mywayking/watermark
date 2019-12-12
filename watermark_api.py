@@ -59,11 +59,14 @@ def upload():
         upload_path = os.path.join(basepath, 'static/images', secure_filename(new_name))
         water_path = os.path.join(basepath, 'static/water', secure_filename(new_name))
         f.save(upload_path)
+        print('save')
         mark_photo(upload_path, water_path, mark_text=mark_text, size=int(size), color=color, opacity=float(opacity),
                    space=int(space), angle=int(angle))
         image_data = open(water_path, "rb").read()
+        print('read')
         os.remove(upload_path)
         os.remove(water_path)
+        print('delete')
         response = make_response(image_data)
         response.headers['Content-Type'] = 'image/png'
         return response
@@ -72,8 +75,11 @@ def upload():
 
 
 if __name__ == '__main__':
+    """
+    mkdir -p static/images
+    mkdir -p static/water
+    """
     # app.debug = True
-    # mkdir -p static/images
-    # mkdir -p static/water
+
     # nohup python -u watermark_api.py >nohup_watermark_api.log 2>&1 &
     app.run(host='0.0.0.0', port=8987, debug=False)
