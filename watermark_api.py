@@ -20,7 +20,7 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 2MB
 # 设置允许的文件格式
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'PNG', 'bmp'}
 # 设置静态文件缓存过期时间
-app.send_file_max_age_default = timedelta(seconds=1)
+app.send_file_max_age_default = timedelta(seconds=10)
 
 
 def allowed_file(filename):
