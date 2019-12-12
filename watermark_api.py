@@ -16,7 +16,7 @@ from watermark import mark_photo
 # initialize our Flask application and the Keras model
 app = flask.Flask(__name__)
 
-app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024  # 2MB
+app.config['MAX_CONTENT_LENGTH'] = 6 * 1024 * 1024  # 2MB
 # 设置允许的文件格式
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'JPG', 'PNG', 'bmp'}
 
